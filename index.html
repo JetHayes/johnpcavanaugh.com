@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Cavanaugh</title>
-  <meta name="description" content="John Cavanaugh is a founder, privacy technologist, and PhD candidate in AI at the University of Cincinnati — bridging executive leadership and engineering depth in AI safety, governance, and explainable AI." />
+  <meta name="description" content="John P. Cavanaugh is a founder, privacy technologist, and PhD candidate at the University of Cincinnati's AI BIO Lab. After founding Plunk Student Community and the Plunk Foundation, he now builds privacy-by-design AI systems and advises organizations on responsible AI and ethical leadership." />
   <link rel="canonical" href="https://johnpcavanaugh.com/" />
-
+ 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +38,7 @@
     "sameAs": ["https://www.linkedin.com/in/privacy-evangelist","https://github.com/JetHayes"]
   }
   </script>
-
+ 
   <style>
     :root {
       --bg:      #1c1917;
@@ -54,7 +54,7 @@
       --sans:    system-ui, -apple-system, 'Segoe UI', sans-serif;
       --mono:    'Courier New', 'Courier', monospace;
     }
-
+ 
     [data-theme="light"] {
       --bg:      #faf8f5;
       --surface: #f0ede8;
@@ -66,38 +66,37 @@
       --accent2: rgba(176,120,72,0.08);
       --accent3: rgba(176,120,72,0.2);
     }
-
+ 
     [data-theme="light"] .pod-card,
     [data-theme="light"] .service-card,
     [data-theme="light"] .stat,
     [data-theme="light"] .stats-row {
       background: #e4e4e4;
     }
-
+ 
     [data-theme="light"] .cred-tag {
       background: #e0d4c4;
       border-color: #b89870;
       color: #5a3510;
-      font-size: 17px;
     }
-
+ 
     [data-theme="light"] a.cred-tag:hover {
       background: #cfc0a8;
     }
-
+ 
     [data-theme="light"] h1 {
       font-size: clamp(3.5rem, 8vw, 6rem);
       font-weight: 600;
       color: #000000;
       letter-spacing: -0.02em;
     }
-
+ 
     [data-theme="light"] .section-label {
       font-weight: 600;
       color: #1a1410;
       letter-spacing: 0.22em;
     }
-
+ 
     [data-theme="light"] .tl-role,
     [data-theme="light"] .advisory-name,
     [data-theme="light"] .project-title,
@@ -106,7 +105,7 @@
       font-weight: 600;
       color: #0f0d0c;
     }
-
+ 
     [data-theme="light"] .tl-desc,
     [data-theme="light"] .advisory-desc,
     [data-theme="light"] .service-desc,
@@ -115,18 +114,18 @@
     [data-theme="light"] .connect-desc {
       color: #3a3530;
     }
-
+ 
     [data-theme="light"] section {
       background: #eeeae4;
       box-shadow: 0 2px 14px rgba(0,0,0,0.07);
       border: none;
     }
-
+ 
     [data-theme="light"] .wrap {
       position: relative;
       z-index: 1;
     }
-
+ 
     #grain-overlay {
       display: none;
       position: fixed;
@@ -135,14 +134,14 @@
       z-index: 9999;
       opacity: 0.12;
     }
-
+ 
     [data-theme="light"] #grain-overlay {
       display: block;
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
+ 
     body {
       background: var(--bg);
       color: var(--ink);
@@ -153,9 +152,9 @@
       -webkit-font-smoothing: antialiased;
       transition: background 0.2s, color 0.2s;
     }
-
+ 
     .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
-
+ 
     /* Theme toggle */
     .theme-toggle {
       position: fixed;
@@ -173,12 +172,12 @@
       transition: border-color 0.15s, color 0.15s;
       z-index: 100;
     }
-
+ 
     .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
     /* Header */
     header { padding: 80px 0 56px; }
-
+ 
     .eyebrow {
       font-family: var(--serif);
       font-size: 20px;
@@ -188,7 +187,7 @@
       color: var(--accent);
       margin-bottom: 16px;
     }
-
+ 
     h1 {
       font-family: var(--serif);
       font-size: clamp(3.5rem, 8vw, 6rem);
@@ -198,12 +197,12 @@
       color: var(--ink);
       margin-bottom: 36px;
     }
-
+ 
     h1 em { font-style: italic; color: var(--accent); }
-
+ 
     .bio { font-size: 20px; font-weight: 400; color: var(--ink); line-height: 1.9; font-family: var(--serif); }
     .bio strong { font-weight: 700; color: var(--accent); font-style: normal; }
-
+ 
     /* Sections */
     section {
       padding: 52px 36px;
@@ -213,7 +212,7 @@
       border: none;
       box-shadow: 0 3px 18px rgba(0,0,0,0.22);
     }
-
+ 
     .section-label {
       font-family: var(--serif);
       font-size: 22px;
@@ -223,10 +222,10 @@
       color: var(--muted);
       margin-bottom: 32px;
     }
-
+ 
     /* Featured podcasts */
     .pod-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
+ 
     .pod-card {
       display: flex;
       flex-direction: column;
@@ -238,16 +237,16 @@
       background: var(--surface);
       transition: border-color 0.15s;
     }
-
+ 
     .pod-card:hover { border-color: var(--accent); }
-
+ 
     .pod-thumb {
       position: relative;
       width: 100%;
       aspect-ratio: 16/9;
       background: #000;
     }
-
+ 
     .pod-thumb iframe {
       position: absolute;
       inset: 0;
@@ -255,21 +254,21 @@
       height: 100%;
       border: none;
     }
-
+ 
     .pod-thumb a {
       display: block;
       position: absolute;
       inset: 0;
       text-decoration: none;
     }
-
+ 
     .pod-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0.85;
     }
-
+ 
     .pod-play {
       position: absolute;
       inset: 0;
@@ -277,7 +276,7 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .pod-play span {
       width: 48px;
       height: 48px;
@@ -290,9 +289,9 @@
       color: var(--bg);
       padding-left: 3px;
     }
-
+ 
     .pod-info { padding: 16px; display: flex; flex-direction: column; gap: 5px; }
-
+ 
     .pod-eyebrow {
       font-family: var(--mono);
       font-size: 10px;
@@ -300,13 +299,13 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-
+ 
     .pod-title { font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.35; font-family: var(--serif); }
     .pod-desc { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--muted); line-height: 1.6; margin-top: 2px; }
-
+ 
     /* Credentials */
     .cred-strip { display: flex; flex-wrap: wrap; gap: 12px; }
-
+ 
     .cred-tag {
       font-family: var(--mono);
       font-size: 11px;
@@ -319,9 +318,9 @@
       text-decoration: none;
       transition: background 0.15s, border-color 0.15s;
     }
-
+ 
     a.cred-tag:hover { background: var(--accent3); border-color: var(--accent); }
-
+ 
     /* Stats */
     .stats-row {
       display: grid;
@@ -332,9 +331,9 @@
       border-radius: 3px;
       overflow: hidden;
     }
-
+ 
     .stat { background: var(--surface); padding: 22px 16px; text-align: center; }
-
+ 
     .stat-number {
       font-family: var(--serif);
       font-size: 3rem;
@@ -343,7 +342,7 @@
       line-height: 1;
       margin-bottom: 6px;
     }
-
+ 
     .stat-label {
       font-family: var(--mono);
       font-size: 13px;
@@ -351,23 +350,23 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-
+ 
     /* Services */
     .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
+ 
     .service-card {
       border: 1px solid var(--border);
       border-radius: 3px;
       padding: 20px;
       background: var(--surface);
     }
-
+ 
     .service-icon { font-size: 20px; margin-bottom: 10px; }
-
+ 
     .service-name { font-size: 20px; font-weight: 500; color: var(--ink); margin-bottom: 6px; font-family: var(--serif); }
-
+ 
     .service-desc { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--muted); line-height: 1.65; }
-
+ 
     .service-cta {
       display: inline-block;
       margin-top: 36px;
@@ -382,12 +381,12 @@
       letter-spacing: 0.03em;
       transition: opacity 0.15s;
     }
-
+ 
     .service-cta:hover { opacity: 0.88; }
-
+ 
     /* Timeline */
     .timeline { display: flex; flex-direction: column; }
-
+ 
     .tl-item {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -395,9 +394,9 @@
       padding: 20px 0;
       border-top: 1px solid var(--border);
     }
-
+ 
     .tl-item:last-child { border-bottom: none; }
-
+ 
     .tl-year {
       font-family: var(--mono);
       font-size: 11px;
@@ -405,9 +404,9 @@
       padding-top: 3px;
       letter-spacing: 0.04em;
     }
-
+ 
     .tl-role { font-size: 20px; font-weight: 500; color: var(--ink); margin-bottom: 4px; font-family: var(--serif); }
-
+ 
     .tl-org {
       font-size: 12.5px;
       color: var(--accent);
@@ -415,12 +414,12 @@
       letter-spacing: 0.03em;
       margin-bottom: 6px;
     }
-
+ 
     .tl-desc { font-size: 18px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
-
+ 
     /* Advisory */
     .advisory-grid { display: flex; flex-direction: column; }
-
+ 
     .advisory-item {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -431,10 +430,10 @@
       text-decoration: none;
       color: inherit;
     }
-
+ 
     .advisory-item:last-child { border-bottom: none; }
     .advisory-item:hover .advisory-name { color: var(--accent); }
-
+ 
     .advisory-name {
       font-family: var(--serif);
       font-size: 17px;
@@ -443,9 +442,9 @@
       margin-bottom: 4px;
       transition: color 0.15s;
     }
-
+ 
     .advisory-desc { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--muted); line-height: 1.6; grid-column: 1; }
-
+ 
     .advisory-tag {
       font-family: var(--mono);
       font-size: 16px;
@@ -458,12 +457,12 @@
       white-space: nowrap;
       align-self: start;
     }
-
+ 
     /* Projects */
     .project-list { display: flex; flex-direction: column; }
     .project { border-top: 1px solid var(--border); padding: 20px 0; }
     .project:last-child { border-bottom: none; }
-
+ 
     .project-header {
       display: flex;
       justify-content: space-between;
@@ -471,7 +470,7 @@
       gap: 16px;
       margin-bottom: 6px;
     }
-
+ 
     .project-title {
       font-family: var(--serif);
       font-size: 17px;
@@ -480,9 +479,9 @@
       text-decoration: none;
       transition: color 0.15s;
     }
-
+ 
     .project-title:hover { color: var(--accent); }
-
+ 
     .project-badge {
       font-family: var(--mono);
       font-size: 13px;
@@ -496,14 +495,14 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-
+ 
     .project-desc { font-size: 18px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
-
+ 
     /* Press */
     .press-list { list-style: none; }
     .press-list li { border-top: 1px solid var(--border); }
     .press-list li:last-child { border-bottom: none; }
-
+ 
     .press-list a { font-family: var(--serif);
       display: flex;
       justify-content: space-between;
@@ -515,9 +514,9 @@
       font-size: 19px;
       transition: color 0.15s;
     }
-
+ 
     .press-list a:hover { color: var(--accent); }
-
+ 
     .pub {
       font-family: var(--mono);
       font-size: 13px;
@@ -526,13 +525,13 @@
       flex-shrink: 0;
       transition: color 0.15s;
     }
-
+ 
     .press-list a:hover .pub { color: var(--accent); }
-
+ 
     /* Connect */
     .connect-desc { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); opacity: 0.8; margin-bottom: 28px; line-height: 1.7; }
     .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
-
+ 
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -545,12 +544,12 @@
       background: var(--surface);
       transition: border-color 0.15s, color 0.15s;
     }
-
+ 
     .social-links a:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
     /* Footer */
     footer { padding: 48px 0 64px; }
-
+ 
     footer p {
       font-family: var(--serif);
       font-size: 18px;
@@ -558,7 +557,7 @@
       color: var(--muted);
       letter-spacing: 0.02em;
     }
-
+ 
     @media (max-width: 720px) {
       .header-grid { grid-template-columns: 1fr !important; }
       .header-photo { display: none; }
@@ -574,41 +573,38 @@
       .advisory-tag { justify-self: start; margin-top: 4px; }
       .theme-toggle { top: 12px; right: 12px; }
     }
-
+ 
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
-
+ 
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
   <span id="theme-label">☀ light</span>
 </button>
-
+ 
 <canvas id="grain-overlay"></canvas>
-
+ 
 <div class="wrap">
-
+ 
   <header style="padding: 80px 0 56px; margin-bottom: 20px;">
     <p class="eyebrow">Cincinnati, Ohio</p>
     <h1>John <em style="color:var(--accent);font-style:italic;">P.</em><br>Cavanaugh</h1>
-
+ 
     <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:stretch;margin-top:32px;">
       <div>
         <p class="bio">
-          Thirteen years ago I started a company on accident with college friends
-          that grew into a <strong>$252 million valuation.</strong>
+          John P. Cavanaugh is a founder, privacy technologist, and PhD candidate
+          at the University of Cincinnati's AI BIO Lab, where he builds
+          privacy-by-design AI systems rooted in explainability and human accountability.
+          After nine years co-founding and leading Plunk Student Community,
+          he spent five years as Executive Director of the Plunk Foundation,
+          serving 30 million children, women, and veterans through consent-first
+          digital safety technology. Today he serves on boards across nonprofit,
+          civic, and technology sectors and advises organizations on responsible AI,
+          privacy strategy, and ethical leadership.
         </p>
-        <p class="bio" style="margin-top: 20px;">
-          I walked away from a <strong>$14 million buyout</strong> rather than sell
-          the data of the students who trusted us.
-        </p>
-        <p class="bio" style="margin-top: 20px;">
-          That decision has shaped everything since: the nonprofit serving
-          <strong>30 million people</strong>, the PhD researching
-          <strong>privacy, explainable AI, and certifiable AI systems</strong>,
-          and the work helping organizations build technology that actually
-          protects people instead of exploiting them.
-        </p>
+ 
       </div>
       <div style="position:relative;min-height:480px;">
         <img
@@ -618,15 +614,15 @@
         />
       </div>
     </div>
-
+ 
     <div style="margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap;">
       <a href="mailto:write2johncavs@protonmail.com" style="display:inline-flex;align-items:center;padding:18px 36px;background:var(--accent);color:var(--bg);text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:500;border-radius:3px;transition:opacity 0.15s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">Work with me →</a>
       <a href="https://linkedin.com/in/privacy-evangelist" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:18px 36px;border:1px solid var(--border);color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:500;border-radius:3px;background:var(--surface);transition:opacity 0.15s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">LinkedIn</a>
     </div>
   </header>
-
-
-
+ 
+ 
+ 
   <section>
     <p class="section-label">Featured</p>
     <div class="pod-pair">
@@ -658,7 +654,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Credentials</p>
     <div class="cred-strip">
@@ -671,7 +667,7 @@
       <span class="cred-tag">Eagle Scout</span>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Scale</p>
     <div class="stats-row">
@@ -689,7 +685,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Work With Me</p>
     <div class="services-grid">
@@ -716,7 +712,7 @@
     </div>
     <a class="service-cta" href="mailto:write2johncavs@protonmail.com">Get in touch →</a>
   </section>
-
+ 
   <section>
     <p class="section-label">Advisory &amp; Board</p>
     <div class="advisory-grid">
@@ -764,7 +760,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Selected Press</p>
     <ul class="press-list">
@@ -782,7 +778,7 @@
       <li><a href="https://c4ss.org/content/59658" target="_blank" rel="noopener">Data Privacy &amp; The Digital Divide <span class="pub">Center for a Stateless Society</span></a></li>
     </ul>
   </section>
-
+ 
   <section>
     <p class="section-label">Experience</p>
     <div class="timeline">
@@ -853,7 +849,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Projects &amp; Research</p>
     <div class="project-list">
@@ -887,7 +883,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section>
     <p class="section-label">Connect</p>
     <p class="connect-desc">
@@ -901,16 +897,16 @@
       <a href="https://github.com/JetHayes" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
-
+ 
   <footer>
     <p>© <span id="yr"></span> John Cavanaugh · johnpcavanaugh.com · <a href="mailto:write2johncavs@protonmail.com" style="color:var(--muted);text-decoration:none;">write2johncavs@protonmail.com</a></p>
   </footer>
-
+ 
 </div>
-
+ 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-
+ 
   function generateGrain() {
     const canvas = document.getElementById('grain-overlay');
     const size = 250;
@@ -943,9 +939,9 @@
     canvas.width = 1;
     canvas.height = 1;
   }
-
+ 
   generateGrain();
-
+ 
   function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
@@ -953,7 +949,7 @@
     document.getElementById('theme-label').textContent = isDark ? '☾ dark' : '☀ light';
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
   }
-
+ 
   (function() {
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -962,6 +958,6 @@
     document.getElementById('theme-label').textContent = theme === 'dark' ? '☀ light' : '☾ dark';
   })();
 </script>
-
+ 
 </body>
 </html>
