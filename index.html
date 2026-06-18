@@ -6,7 +6,7 @@
   <title>John Cavanaugh</title>
   <meta name="description" content="John P. Cavanaugh is a founder, privacy technologist, and PhD candidate at the University of Cincinnati's AI BIO Lab. After founding Plunk Student Community and the Plunk Foundation, he now builds privacy-by-design AI systems and advises organizations on responsible AI and ethical leadership." />
   <link rel="canonical" href="https://johnpcavanaugh.com/" />
- 
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,14 +31,15 @@
     "hasCredential": [
       { "@type": "EducationalOccupationalCredential", "name": "Certified Information Privacy Manager (CIPM)" },
       { "@type": "EducationalOccupationalCredential", "name": "Certified Information Privacy Technologist (CIPT)" },
-      { "@type": "EducationalOccupationalCredential", "name": "Certified Information Privacy Professional / United States (CIPP/US)" }
+      { "@type": "EducationalOccupationalCredential", "name": "Certified Information Privacy Professional / United States (CIPP/US)" },
+      { "@type": "EducationalOccupationalCredential", "name": "Fellow of Information Privacy (FIP)" }
     ],
     "knowsAbout": ["Fuzzy Logic Systems","Explainable AI","Certifiable AI","Privacy-Preserving Machine Learning","Differential Privacy","AI Governance","LLMOps","Retrieval-Augmented Generation","AI Safety","Digital Child Safety","Responsible AI","Business Coaching","Startup Mentoring"],
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Cincinnati" },
     "sameAs": ["https://www.linkedin.com/in/privacy-evangelist","https://github.com/JetHayes"]
   }
   </script>
- 
+
   <style>
     :root {
       --bg:      #1c1917;
@@ -53,8 +54,9 @@
       --serif:   'Garamond', 'Georgia', 'Times New Roman', serif;
       --sans:    system-ui, -apple-system, 'Segoe UI', sans-serif;
       --mono:    'Courier New', 'Courier', monospace;
+      --nav-h:   56px;
     }
- 
+
     [data-theme="light"] {
       --bg:      #faf8f5;
       --surface: #f0ede8;
@@ -66,37 +68,37 @@
       --accent2: rgba(176,120,72,0.08);
       --accent3: rgba(176,120,72,0.2);
     }
- 
+
     [data-theme="light"] .pod-card,
     [data-theme="light"] .service-card,
     [data-theme="light"] .stat,
     [data-theme="light"] .stats-row {
       background: #e4e4e4;
     }
- 
+
     [data-theme="light"] .cred-tag {
       background: #e0d4c4;
       border-color: #b89870;
       color: #5a3510;
     }
- 
+
     [data-theme="light"] a.cred-tag:hover {
       background: #cfc0a8;
     }
- 
+
     [data-theme="light"] h1 {
       font-size: clamp(3.5rem, 8vw, 6rem);
       font-weight: 600;
       color: #000000;
       letter-spacing: -0.02em;
     }
- 
+
     [data-theme="light"] .section-label {
       font-weight: 600;
       color: #1a1410;
       letter-spacing: 0.22em;
     }
- 
+
     [data-theme="light"] .tl-role,
     [data-theme="light"] .advisory-name,
     [data-theme="light"] .project-title,
@@ -105,7 +107,7 @@
       font-weight: 600;
       color: #0f0d0c;
     }
- 
+
     [data-theme="light"] .tl-desc,
     [data-theme="light"] .advisory-desc,
     [data-theme="light"] .service-desc,
@@ -114,18 +116,23 @@
     [data-theme="light"] .connect-desc {
       color: #3a3530;
     }
- 
+
     [data-theme="light"] section {
       background: #eeeae4;
       box-shadow: 0 2px 14px rgba(0,0,0,0.07);
       border: none;
     }
- 
+
     [data-theme="light"] .wrap {
       position: relative;
       z-index: 1;
     }
- 
+
+    [data-theme="light"] .site-nav {
+      background: rgba(250,248,245,0.92);
+      border-bottom-color: #e0e0e0;
+    }
+
     #grain-overlay {
       display: none;
       position: fixed;
@@ -134,14 +141,14 @@
       z-index: 9999;
       opacity: 0.12;
     }
- 
+
     [data-theme="light"] #grain-overlay {
       display: block;
     }
- 
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
- 
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); }
+
     body {
       background: var(--bg);
       color: var(--ink);
@@ -151,33 +158,150 @@
       font-size: 24px;
       -webkit-font-smoothing: antialiased;
       transition: background 0.2s, color 0.2s;
+      padding-top: var(--nav-h);
     }
- 
-    .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
- 
-    /* Theme toggle */
-    .theme-toggle {
+
+    /* ── NAV ── */
+    .site-nav {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--surface);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      background: rgba(28,25,23,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 28px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-logo span { color: var(--accent); font-style: italic; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 2px;
+      transition: color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      background: var(--accent2);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle {
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 6px 12px;
+      padding: 5px 12px;
       cursor: pointer;
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       letter-spacing: 0.06em;
       transition: border-color 0.15s, color 0.15s;
-      z-index: 100;
+      white-space: nowrap;
+      line-height: 1;
     }
- 
+
     .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
- 
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 6px 8px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 199;
+      padding: 16px 28px 20px;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-drawer.open { display: flex; }
+
+    .nav-drawer a {
+      font-family: var(--mono);
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s;
+    }
+
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a:hover { color: var(--accent); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
     /* Header */
-    header { padding: 80px 0 56px; }
- 
+    header { padding: 64px 0 56px; }
+
     .eyebrow {
       font-family: var(--serif);
       font-size: 20px;
@@ -187,7 +311,7 @@
       color: var(--accent);
       margin-bottom: 16px;
     }
- 
+
     h1 {
       font-family: var(--serif);
       font-size: clamp(3.5rem, 8vw, 6rem);
@@ -197,12 +321,77 @@
       color: var(--ink);
       margin-bottom: 36px;
     }
- 
+
     h1 em { font-style: italic; color: var(--accent); }
- 
+
     .bio { font-size: 20px; font-weight: 400; color: var(--ink); line-height: 1.9; font-family: var(--serif); }
     .bio strong { font-weight: 700; color: var(--accent); font-style: normal; }
- 
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    .header-photo {
+      position: relative;
+      min-height: 480px;
+    }
+
+    .header-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 8%;
+      border-radius: 4px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.35);
+      display: block;
+    }
+
+    .header-cta {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 18px 36px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 3px;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 18px 36px;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 3px;
+      background: var(--surface);
+      transition: opacity 0.15s;
+    }
+
+    .btn-secondary:hover { opacity: 0.7; }
+
     /* Sections */
     section {
       padding: 52px 36px;
@@ -212,7 +401,7 @@
       border: none;
       box-shadow: 0 3px 18px rgba(0,0,0,0.22);
     }
- 
+
     .section-label {
       font-family: var(--serif);
       font-size: 22px;
@@ -222,10 +411,10 @@
       color: var(--muted);
       margin-bottom: 32px;
     }
- 
-    /* Featured podcasts */
+
+    /* Featured */
     .pod-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
- 
+
     .pod-card {
       display: flex;
       flex-direction: column;
@@ -237,38 +426,30 @@
       background: var(--surface);
       transition: border-color 0.15s;
     }
- 
+
     .pod-card:hover { border-color: var(--accent); }
- 
+
     .pod-thumb {
       position: relative;
       width: 100%;
       aspect-ratio: 16/9;
       background: #000;
     }
- 
-    .pod-thumb iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
- 
+
     .pod-thumb a {
       display: block;
       position: absolute;
       inset: 0;
       text-decoration: none;
     }
- 
+
     .pod-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0.85;
     }
- 
+
     .pod-play {
       position: absolute;
       inset: 0;
@@ -276,7 +457,7 @@
       align-items: center;
       justify-content: center;
     }
- 
+
     .pod-play span {
       width: 48px;
       height: 48px;
@@ -289,26 +470,26 @@
       color: var(--bg);
       padding-left: 3px;
     }
- 
+
     .pod-info { padding: 16px; display: flex; flex-direction: column; gap: 5px; }
- 
+
     .pod-eyebrow {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 14px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
     }
- 
-    .pod-title { font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.35; font-family: var(--serif); }
-    .pod-desc { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--muted); line-height: 1.6; margin-top: 2px; }
- 
+
+    .pod-title { font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1.35; font-family: var(--serif); }
+    .pod-desc { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--muted); line-height: 1.6; margin-top: 2px; }
+
     /* Credentials */
     .cred-strip { display: flex; flex-wrap: wrap; gap: 12px; }
- 
+
     .cred-tag {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 15px;
       letter-spacing: 0.06em;
       color: var(--accent);
       background: var(--accent2);
@@ -318,9 +499,9 @@
       text-decoration: none;
       transition: background 0.15s, border-color 0.15s;
     }
- 
+
     a.cred-tag:hover { background: var(--accent3); border-color: var(--accent); }
- 
+
     /* Stats */
     .stats-row {
       display: grid;
@@ -331,9 +512,9 @@
       border-radius: 3px;
       overflow: hidden;
     }
- 
+
     .stat { background: var(--surface); padding: 22px 16px; text-align: center; }
- 
+
     .stat-number {
       font-family: var(--serif);
       font-size: 3rem;
@@ -342,31 +523,29 @@
       line-height: 1;
       margin-bottom: 6px;
     }
- 
+
     .stat-label {
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 16px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
     }
- 
+
     /* Services */
     .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
- 
+
     .service-card {
       border: 1px solid var(--border);
       border-radius: 3px;
       padding: 20px;
       background: var(--surface);
     }
- 
+
     .service-icon { font-size: 20px; margin-bottom: 10px; }
- 
-    .service-name { font-size: 20px; font-weight: 500; color: var(--ink); margin-bottom: 6px; font-family: var(--serif); }
- 
-    .service-desc { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--muted); line-height: 1.65; }
- 
+    .service-name { font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 6px; font-family: var(--serif); }
+    .service-desc { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--muted); line-height: 1.65; }
+
     .service-cta {
       display: inline-block;
       margin-top: 36px;
@@ -381,12 +560,12 @@
       letter-spacing: 0.03em;
       transition: opacity 0.15s;
     }
- 
+
     .service-cta:hover { opacity: 0.88; }
- 
+
     /* Timeline */
     .timeline { display: flex; flex-direction: column; }
- 
+
     .tl-item {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -394,32 +573,32 @@
       padding: 20px 0;
       border-top: 1px solid var(--border);
     }
- 
+
     .tl-item:last-child { border-bottom: none; }
- 
+
     .tl-year {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 15px;
       color: var(--muted);
       padding-top: 3px;
       letter-spacing: 0.04em;
     }
- 
-    .tl-role { font-size: 20px; font-weight: 500; color: var(--ink); margin-bottom: 4px; font-family: var(--serif); }
- 
+
+    .tl-role { font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 4px; font-family: var(--serif); }
+
     .tl-org {
-      font-size: 12.5px;
+      font-size: 16px;
       color: var(--accent);
       font-family: var(--mono);
       letter-spacing: 0.03em;
       margin-bottom: 6px;
     }
- 
-    .tl-desc { font-size: 18px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
- 
+
+    .tl-desc { font-size: 19px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
+
     /* Advisory */
     .advisory-grid { display: flex; flex-direction: column; }
- 
+
     .advisory-item {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -430,21 +609,21 @@
       text-decoration: none;
       color: inherit;
     }
- 
+
     .advisory-item:last-child { border-bottom: none; }
-    .advisory-item:hover .advisory-name { color: var(--accent); }
- 
+    a.advisory-item:hover .advisory-name { color: var(--accent); }
+
     .advisory-name {
       font-family: var(--serif);
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 500;
       color: var(--ink);
       margin-bottom: 4px;
       transition: color 0.15s;
     }
- 
+
     .advisory-desc { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--muted); line-height: 1.6; grid-column: 1; }
- 
+
     .advisory-tag {
       font-family: var(--mono);
       font-size: 16px;
@@ -457,12 +636,12 @@
       white-space: nowrap;
       align-self: start;
     }
- 
+
     /* Projects */
     .project-list { display: flex; flex-direction: column; }
     .project { border-top: 1px solid var(--border); padding: 20px 0; }
     .project:last-child { border-bottom: none; }
- 
+
     .project-header {
       display: flex;
       justify-content: space-between;
@@ -470,21 +649,21 @@
       gap: 16px;
       margin-bottom: 6px;
     }
- 
+
     .project-title {
       font-family: var(--serif);
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 500;
       color: var(--ink);
       text-decoration: none;
       transition: color 0.15s;
     }
- 
+
     .project-title:hover { color: var(--accent); }
- 
+
     .project-badge {
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 15px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--accent);
@@ -495,15 +674,16 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
- 
-    .project-desc { font-size: 18px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
- 
+
+    .project-desc { font-size: 19px; font-weight: 500; color: var(--muted); line-height: 1.6; font-family: var(--serif); }
+
     /* Press */
     .press-list { list-style: none; }
     .press-list li { border-top: 1px solid var(--border); }
     .press-list li:last-child { border-bottom: none; }
- 
-    .press-list a { font-family: var(--serif);
+
+    .press-list a {
+      font-family: var(--serif);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -511,27 +691,27 @@
       padding: 15px 0;
       color: var(--ink);
       text-decoration: none;
-      font-size: 19px;
+      font-size: 20px;
       transition: color 0.15s;
     }
- 
+
     .press-list a:hover { color: var(--accent); }
- 
+
     .pub {
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 16px;
       color: var(--muted);
       white-space: nowrap;
       flex-shrink: 0;
       transition: color 0.15s;
     }
- 
+
     .press-list a:hover .pub { color: var(--accent); }
- 
+
     /* Connect */
     .connect-desc { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); opacity: 0.8; margin-bottom: 28px; line-height: 1.7; }
     .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
- 
+
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -540,30 +720,32 @@
       border-radius: 2px;
       color: var(--ink);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 18px;
       background: var(--surface);
       transition: border-color 0.15s, color 0.15s;
     }
- 
+
     .social-links a:hover { border-color: var(--accent); color: var(--accent); }
- 
+
     /* Footer */
     footer { padding: 48px 0 64px; }
- 
+
     footer p {
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       color: var(--muted);
       letter-spacing: 0.02em;
     }
- 
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
-      .header-grid { grid-template-columns: 1fr !important; }
-      .header-photo { display: none; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .header-grid { grid-template-columns: 1fr; }
+      .header-photo { min-height: 280px; }
       h1 { font-size: 3rem; }
-      header { padding: 56px 0 40px; }
-      header > div[style*="grid"] { grid-template-columns: 1fr !important; }
+      header { padding: 40px 0 40px; }
       .stats-row { grid-template-columns: 1fr; }
       .pod-pair { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
@@ -571,27 +753,58 @@
       .tl-year { padding-top: 0; }
       .advisory-item { grid-template-columns: 1fr; }
       .advisory-tag { justify-self: start; margin-top: 4px; }
-      .theme-toggle { top: 12px; right: 12px; }
+      section { padding: 36px 20px; }
     }
- 
+
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
- 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
-  <span id="theme-label">☀ light</span>
-</button>
- 
+
+<!-- ── STICKY NAV ── -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">John <span>P.</span> Cavanaugh</a>
+    <ul class="nav-links">
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#work">Work With Me</a></li>
+      <li><a href="#advisory">Advisory</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#connect">Connect</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+          <span id="theme-label">☀ light</span>
+        </button>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-hamburger" onclick="toggleDrawer()" aria-label="Open menu" aria-expanded="false" id="hamburger">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="nav-drawer" role="menu">
+  <a href="#featured" onclick="closeDrawer()">Featured</a>
+  <a href="#work" onclick="closeDrawer()">Work With Me</a>
+  <a href="#advisory" onclick="closeDrawer()">Advisory</a>
+  <a href="#press" onclick="closeDrawer()">Press</a>
+  <a href="#experience" onclick="closeDrawer()">Experience</a>
+  <a href="#projects" onclick="closeDrawer()">Projects</a>
+  <a href="#connect" onclick="closeDrawer()">Connect</a>
+</div>
+
 <canvas id="grain-overlay"></canvas>
- 
-<div class="wrap">
- 
-  <header style="padding: 80px 0 56px; margin-bottom: 20px;">
+
+<div class="wrap" id="top">
+
+  <header>
     <p class="eyebrow">Cincinnati, Ohio</p>
-    <h1>John <em style="color:var(--accent);font-style:italic;">P.</em><br>Cavanaugh</h1>
- 
-    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:stretch;margin-top:32px;">
+    <h1>John <em>P.</em><br>Cavanaugh</h1>
+
+    <div class="header-grid">
       <div>
         <p class="bio">
           John P. Cavanaugh is a founder, privacy technologist, and PhD candidate
@@ -604,26 +817,22 @@
           civic, and technology sectors and advises organizations on responsible AI,
           privacy strategy, and ethical leadership.
         </p>
- 
       </div>
-      <div style="position:relative;min-height:480px;">
+      <div class="header-photo">
         <img
           src="john-speaking.jpg"
           alt="John Cavanaugh moderating a panel on AI and privacy"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%;border-radius:4px;box-shadow:0 6px 32px rgba(0,0,0,0.35);display:block;"
         />
       </div>
     </div>
- 
-    <div style="margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap;">
-      <a href="mailto:write2johncavs@protonmail.com" style="display:inline-flex;align-items:center;padding:18px 36px;background:var(--accent);color:var(--bg);text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:500;border-radius:3px;transition:opacity 0.15s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">Work with me →</a>
-      <a href="https://linkedin.com/in/privacy-evangelist" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:18px 36px;border:1px solid var(--border);color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:500;border-radius:3px;background:var(--surface);transition:opacity 0.15s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">LinkedIn</a>
+
+    <div class="header-cta">
+      <a href="mailto:write2johncavs@protonmail.com?subject=Working%20Together" class="btn-primary">Work with me →</a>
+      <a href="https://linkedin.com/in/privacy-evangelist" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
     </div>
   </header>
- 
- 
- 
-  <section>
+
+  <section id="featured">
     <p class="section-label">Featured</p>
     <div class="pod-pair">
       <div class="pod-card">
@@ -654,21 +863,24 @@
       </div>
     </div>
   </section>
- 
-  <section>
+
+  <section id="credentials">
     <p class="section-label">Credentials</p>
     <div class="cred-strip">
       <span class="cred-tag">10 Years — For-Profit Founder &amp; President</span>
       <span class="cred-tag">5 Years — Nonprofit Founder &amp; Executive Director</span>
       <span class="cred-tag">PhD Candidate — UC AI &amp; Aerospace</span>
-      <a class="cred-tag" href="https://iapp.org/certify/cipm/" target="_blank" rel="noopener">CIPM</a>
-      <a class="cred-tag" href="https://iapp.org/certify/cipt/" target="_blank" rel="noopener">CIPT</a>
-      <a class="cred-tag" href="https://iapp.org/certify/cipp/us/" target="_blank" rel="noopener">CIPP/US</a>
+      <a class="cred-tag" href="https://www.credential.net/c76404ae-8de9-4aeb-b853-19fd685b3d37" target="_blank" rel="noopener">CIPP/US</a>
+      <a class="cred-tag" href="https://www.credential.net/16376e23-8e10-4ccb-8e09-62d6f15b857e" target="_blank" rel="noopener">CIPM</a>
+      <a class="cred-tag" href="https://www.credential.net/83e1e4d8-36cc-42f3-8522-982aa4b596c3?key=947ea2d0ea164d5d0a81768ec8a5e6b8d426b694019b7714230bb5966074ff7f" target="_blank" rel="noopener">CIPT</a>
+      <a class="cred-tag" href="https://www.credential.net/d85d261d-c602-4dd4-a391-4321b3347646" target="_blank" rel="noopener">FIP</a>
+      <a class="cred-tag" href="https://www.credential.net/47bea0bc-933a-44e1-ae7d-961a05f48c32?key=6ce0bf75d9eb1b9344caa9aa473f2eaa4c11196787595167bf7c9565c9cadac1" target="_blank" rel="noopener">IAPP Chapter Chair</a>
+      <a class="cred-tag" href="https://www.credential.net/10683ba7-6a8e-410c-ba45-be6eb2d8cf61?key=0fd58b057d6ad40b76d712292e933b1e907f1c2c2c1ce6a5abc78dd99dc8ec86" target="_blank" rel="noopener">Young Privacy Professional</a>
       <span class="cred-tag">Eagle Scout</span>
     </div>
   </section>
- 
-  <section>
+
+  <section id="scale">
     <p class="section-label">Scale</p>
     <div class="stats-row">
       <div class="stat">
@@ -685,8 +897,8 @@
       </div>
     </div>
   </section>
- 
-  <section>
+
+  <section id="work">
     <p class="section-label">Work With Me</p>
     <div class="services-grid">
       <div class="service-card">
@@ -710,10 +922,10 @@
         <div class="service-desc">Research-grade XAI, certifiable AI, and privacy-by-design architecture for teams building systems that need to be trusted — and proven.</div>
       </div>
     </div>
-    <a class="service-cta" href="mailto:write2johncavs@protonmail.com">Get in touch →</a>
+    <a class="service-cta" href="mailto:write2johncavs@protonmail.com?subject=Working%20Together">Get in touch →</a>
   </section>
- 
-  <section>
+
+  <section id="advisory">
     <p class="section-label">Advisory &amp; Board</p>
     <div class="advisory-grid">
       <a class="advisory-item" href="https://alloydev.org" target="_blank" rel="noopener">
@@ -730,28 +942,28 @@
         </div>
         <span class="advisory-tag">Advisor</span>
       </a>
-      <a class="advisory-item" style="cursor:default;">
+      <div class="advisory-item">
         <div>
           <div class="advisory-name">MEDIA Africa</div>
           <div class="advisory-desc">Equipping journalists across Nigeria with digital street smarts and privacy protection.</div>
         </div>
         <span class="advisory-tag">Advisor</span>
-      </a>
-      <div class="advisory-item" href="https://www.madeincincinnati.co/" target="_blank" rel="noopener"> 
+      </div>
+      <a class="advisory-item" href="https://www.madeincincinnati.co/" target="_blank" rel="noopener">
         <div>
           <div class="advisory-name">Made in Cincinnati — Responsible AI Certification</div>
           <div class="advisory-desc">Regional certification recognizing human-centered AI across Greater Cincinnati and Northern Kentucky.</div>
         </div>
         <span class="advisory-tag">Advisor</span>
-      </div>
+      </a>
       <a class="advisory-item" href="https://arachnidsys.com/" target="_blank" rel="noopener">
         <div>
           <div class="advisory-name">Arachnid Systems</div>
-          <div class="advisory-desc">AI-powered autonomous inspection robotics for aerospace, defense, energy, and space. Active with NASA KSC, AFRL, and DIU. Board member.</div>
+          <div class="advisory-desc">AI-powered autonomous inspection robotics for aerospace, defense, energy, and space. Active with NASA KSC, AFRL, and DIU.</div>
         </div>
         <span class="advisory-tag">Board</span>
       </a>
-      <div class="advisory-item" href="https://shieldthefuture.com/" target="_blank" rel="noopener">
+      <div class="advisory-item">
         <div>
           <div class="advisory-name">SHIELD</div>
           <div class="advisory-desc">Global Online Safety Conference — 11,200+ attendees across inaugural year of programming. Co-founder and voting board member.</div>
@@ -760,8 +972,8 @@
       </div>
     </div>
   </section>
- 
-  <section>
+
+  <section id="press">
     <p class="section-label">Selected Press</p>
     <ul class="press-list">
       <li><a href="https://moversmakers.org/2024/10/01/notables-in-ai/" target="_blank" rel="noopener">AI Notable <span class="pub">Movers &amp; Makers, 2024</span></a></li>
@@ -778,8 +990,8 @@
       <li><a href="https://c4ss.org/content/59658" target="_blank" rel="noopener">Data Privacy &amp; The Digital Divide <span class="pub">Center for a Stateless Society</span></a></li>
     </ul>
   </section>
- 
-  <section>
+
+  <section id="experience">
     <p class="section-label">Experience</p>
     <div class="timeline">
       <div class="tl-item">
@@ -822,7 +1034,6 @@
           <div class="tl-desc">AI risk framework across 16 counties in Greater Cincinnati. $3M in grants submitted. ~10,000 people reached.</div>
         </div>
       </div>
-      
       <div class="tl-item">
         <span class="tl-year">2025–Now</span>
         <div>
@@ -849,8 +1060,8 @@
       </div>
     </div>
   </section>
- 
-  <section>
+
+  <section id="projects">
     <p class="section-label">Projects &amp; Research</p>
     <div class="project-list">
       <div class="project">
@@ -869,7 +1080,7 @@
       </div>
       <div class="project">
         <div class="project-header">
-          <a class="project-title" target="_blank" rel="noopener">Full-Stack AI System — Builds &amp; Builders</a>
+          <span class="project-title">Full-Stack AI System — Builds &amp; Builders</span>
           <span class="project-badge">In Production</span>
         </div>
         <p class="project-desc">Ground-up AI architecture combining fuzzy logic, graph databases, and vector databases — built with XAI principles and privacy by design.</p>
@@ -883,8 +1094,8 @@
       </div>
     </div>
   </section>
- 
-  <section>
+
+  <section id="connect">
     <p class="section-label">Connect</p>
     <p class="connect-desc">
       If you're building something that matters — a company, a coalition, a system —
@@ -892,34 +1103,31 @@
       let's talk.
     </p>
     <div class="social-links">
-      <a href="mailto:write2johncavs@protonmail.com" style="background:var(--accent);color:var(--bg);border-color:var(--accent);">Email John →</a>
+      <a href="mailto:write2johncavs@protonmail.com?subject=Working%20Together" style="background:var(--accent);color:var(--bg);border-color:var(--accent);">Email John →</a>
       <a href="https://linkedin.com/in/privacy-evangelist" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/JetHayes" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
- 
+
   <footer>
     <p>© <span id="yr"></span> John Cavanaugh · johnpcavanaugh.com · <a href="mailto:write2johncavs@protonmail.com" style="color:var(--muted);text-decoration:none;">write2johncavs@protonmail.com</a></p>
   </footer>
- 
+
 </div>
- 
+
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
- 
+
   function generateGrain() {
     const canvas = document.getElementById('grain-overlay');
     const size = 250;
     canvas.width = size;
     canvas.height = size;
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
-    canvas.style.backgroundRepeat = 'repeat';
     const ctx = canvas.getContext('2d');
     const imageData = ctx.createImageData(size, size);
     for (let i = 0; i < imageData.data.length; i += 4) {
       const val = Math.random() * 255;
-      imageData.data[i]     = val;
+      imageData.data[i] = val;
       imageData.data[i + 1] = val;
       imageData.data[i + 2] = val;
       imageData.data[i + 3] = 255;
@@ -939,9 +1147,9 @@
     canvas.width = 1;
     canvas.height = 1;
   }
- 
+
   generateGrain();
- 
+
   function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
@@ -949,7 +1157,23 @@
     document.getElementById('theme-label').textContent = isDark ? '☾ dark' : '☀ light';
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
   }
- 
+
+  function toggleDrawer() {
+    const drawer = document.getElementById('nav-drawer');
+    const btn = document.getElementById('hamburger');
+    const isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.textContent = isOpen ? '✕' : '☰';
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('nav-drawer');
+    const btn = document.getElementById('hamburger');
+    drawer.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    btn.textContent = '☰';
+  }
+
   (function() {
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -958,6 +1182,6 @@
     document.getElementById('theme-label').textContent = theme === 'dark' ? '☀ light' : '☾ dark';
   })();
 </script>
- 
+
 </body>
 </html>
